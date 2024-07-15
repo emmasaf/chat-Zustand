@@ -11,7 +11,7 @@ export const Header = ()=>{
             <img src="/images/avatar-group.png" alt="avatar-group"/>
              <div style={textBoxStyle} >
                  <Text isTitle text='🦄 Team Unicorns'/>
-                 <Text text='last seen 45 minutes ago'/>
+                 <Text color='#666668' text='last seen 45 minutes ago'/>
              </div>
             <MoreOutlined style={iconStyles}/>
         </AntHeader>
