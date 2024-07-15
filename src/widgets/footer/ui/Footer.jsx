@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Layout } from 'antd';
 import { SmileOutlined } from '@ant-design/icons';
-import { SendButton, UploadButton, MessageInput } from '../../../features';
-import { emojiIconStyles, footerStyle } from './styles.js';
+import { SendButton, UploadButton } from '../../../features';
+import { emojiIconStyles,inputStyles, footerStyle } from './styles.js';
 
 const { Footer: AntFooter } = Layout;
 
@@ -18,14 +18,17 @@ export const Footer = () => {
 
     return (
         <AntFooter style={footerStyle}>
-            <SmileOutlined style={emojiIconStyles} />
-            <MessageInput
+            <SmileOutlined style={emojiIconStyles}/>
+            <input
                 value={value}
                 onChange={handleChangeValue}
+                style={inputStyles}
+                type="text"
+                placeholder="Start typing..."
                 onFocus={() => setIsInputFocused(true)}
                 onBlur={() => setIsInputFocused(false)}
             />
-            <UploadButton />
+            <UploadButton/>
             <SendButton active={isActive} isDisabled={isDisabled}/>
         </AntFooter>
     );
