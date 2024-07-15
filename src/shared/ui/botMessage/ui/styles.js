@@ -13,7 +13,13 @@ export const messageBoxStyles = {
     flexDirection: 'row',
     minHeight: '39px',
 }
-
+export const editDeleteStyles = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: "6px",
+    padding: "6px",
+    justifyContent: 'flex-end',
+}
 export const containerStyles = {
     width: '100%',
     display: 'flex',

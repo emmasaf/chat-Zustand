@@ -8,8 +8,7 @@ import {
 } from "./styles.js";
 
 import {formatTime} from "../../../lib";
-import {Subtitle} from "../../subtitle";
-import {Title} from "../../title";
+import {Text} from "../../text";
 import {UserIcon} from "../../userIcon/index.js";
 
 export const BotMessage = (props) => {
@@ -18,16 +17,16 @@ export const BotMessage = (props) => {
 
     return (
         <div style={containerStyles}>
-            <UserIcon image='/images/avatar-with-online-indicator.png'/>
+            <UserIcon/>
             <div style={messageBoxStyles}>
                 <div style={textStyles}>
-                    <Title text='Bot'/>
+                    <Text isTitle text='Bot'/>
                     <div style={titleStyles}>
-                        <Subtitle text={message} {...messageTextStyles}/>
+                        <Text text={message} {...messageTextStyles}/>
                     </div>
                 </div>
                 <div style={detailStyles}>
-                    <Subtitle text={time} fontSize='12px' color='black'/>
+                    <Text text={time} fontSize='12px' color='black'/>
                     <img src="/images/check.png" alt="status"/>
                 </div>
                 {isFirst && <img style={bubbleTipStyles} src="/images/top-vector-tip.png" alt="tip"/>}

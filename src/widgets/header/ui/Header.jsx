@@ -1,6 +1,6 @@
 import {Layout} from "antd";
 import {MoreOutlined} from "@ant-design/icons";
-import {Subtitle, Title} from "../../../shared/ui";
+import {Text} from "../../../shared/ui";
 import {headerStyle, iconStyles, textBoxStyle} from "./styles.js";
 
 const { Header: AntHeader } = Layout;
@@ -10,8 +10,8 @@ export const Header = ()=>{
         <AntHeader style={headerStyle}>
             <img src="/images/avatar-group.png" alt="avatar-group"/>
              <div style={textBoxStyle} >
-                 <Title text='🦄 Team Unicorns'/>
-                 <Subtitle text='last seen 45 minutes ago'/>
+                 <Text isTitle text='🦄 Team Unicorns'/>
+                 <Text text='last seen 45 minutes ago'/>
              </div>
             <MoreOutlined style={iconStyles}/>
         </AntHeader>

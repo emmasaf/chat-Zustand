@@ -22,7 +22,13 @@ export const containerStyles = {
     display: 'flex',
     justifyContent: 'flex-end',
 }
-
+export const editDeleteStyles = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: "6px",
+    padding: "6px",
+    justifyContent: 'flex-end',
+}
 export const detailStyles = {
     minWidth: '70px',
     display: 'flex',

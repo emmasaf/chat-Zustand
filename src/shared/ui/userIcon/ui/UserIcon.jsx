@@ -1,8 +1,8 @@
 import {avatarBoxStyles, avatarImageStyles, avatarStatusStyles} from "./styles.js";
 
-export const UserIcon = (props) => (
+export const UserIcon = () => (
     <div style={avatarBoxStyles}>
-        <img style={avatarImageStyles} src={props.image} alt='user-icon'/>
-        {props.status && <img style={avatarStatusStyles} src="/images/online-indicator.png" alt="user-status"/>}
+        <img style={avatarImageStyles} src='/images/avatar-with-online-indicator.png' alt='user-icon'/>
+         <img style={avatarStatusStyles} src="/images/online-indicator.png" alt="user-status"/>
     </div>
 )

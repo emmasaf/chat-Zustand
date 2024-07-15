@@ -1,16 +1,20 @@
-import {Layout} from 'antd';
-import {chatStyles} from "./styles.js";
-import {BotMessage, FullDate, UserMessage} from "../../../shared/ui";
+import {Layout, Typography} from 'antd';
+import {chatStyles, dateStyles} from "./styles.js";
+import {BotMessage, UserMessage} from "../../../shared/ui";
+import {formatDate} from "../../../shared/lib";
 
 const {Content} = Layout;
 
 export const Chat = () => {
-    const todayDate = new Date();
+    const date = new Date();
+    const todayDate = formatDate(date);
     return (
         <Content style={chatStyles}>
-            <FullDate date={todayDate}/>
-            <UserMessage date={todayDate} message='Hi team 👋' isFirst/>
-            <BotMessage date={todayDate} message='I’m down! Any ideas??' isFirst/>
+            <Typography style={dateStyles} variant="body2" component="p" >
+                {todayDate}
+            </Typography>
+            <UserMessage date={date} message='Hi team 👋' isFirst/>
+            <BotMessage date={date} message='I’m down! Any ideas??' isFirst/>
         </Content>
     )
 }

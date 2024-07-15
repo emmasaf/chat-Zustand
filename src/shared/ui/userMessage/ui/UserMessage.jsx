@@ -4,23 +4,28 @@ import {
     detailStyles,
     messageTextStyles,
     bubbleTipStyles,
-    titleStyles
+    titleStyles, editDeleteStyles
 } from "./styles.js";
 
 import {formatTime} from "../../../lib";
-import {Subtitle} from "../../subtitle";
+import {Text} from "../../text";
+import {EditButton,DeleteButton} from "../../../../features";
 
 export const UserMessage = (props) => {
     const {date, message, isFirst = true} = props
     const time = formatTime(date)
     return (
         <div style={containerStyles}>
+            <div style={editDeleteStyles}>
+                <EditButton/>
+                <DeleteButton/>
+            </div>
             <div style={messageBoxStyles}>
                 <div style={titleStyles}>
-                    <Subtitle text={message} {...messageTextStyles}/>
+                    <Text text={message} {...messageTextStyles}/>
                 </div>
                 <div style={detailStyles}>
-                    <Subtitle text={time} fontSize='12px' color='white'/>
+                    <Text text={time} fontSize='12px' color='white'/>
                     <img src="/images/check.png" alt="status"/>
                 </div>
                 {isFirst && <img style={bubbleTipStyles} src="/images/bubble-tip.png" alt="tip"/>}
