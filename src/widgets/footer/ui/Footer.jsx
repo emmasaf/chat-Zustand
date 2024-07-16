@@ -3,7 +3,7 @@ import {Layout} from 'antd';
 import {SmileOutlined} from '@ant-design/icons';
 import {SendButton, UploadButton} from '../../../features';
 import {emojiIconStyles, inputStyles, footerStyle} from './styles.js';
-import {useChatStore} from "../../../shared/zustand/index.js";
+import {useChatStore} from "../../../shared/zustand";
 
 const {Footer: AntFooter} = Layout;
 

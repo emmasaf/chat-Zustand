@@ -1,6 +1,6 @@
 import {buttonStyles} from "./styles.js";
 import {EditOutlined} from "@ant-design/icons";
-import {useChatStore} from "../../../shared/zustand/index.js";
+import {useChatStore} from "../../../shared/zustand";
 
 export const EditButton = (props) => {
     const {setEditProps} = useChatStore()

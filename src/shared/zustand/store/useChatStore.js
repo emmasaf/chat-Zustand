@@ -10,6 +10,9 @@ export const useChatStore = create((set) => ({
     setEditProps:(newProps) => set(() => ({
         editProps:newProps,
     })),
+    setMessages:(data) => set(() => ({
+        chats:data,
+    })),
     updateMessage: (id, updatedMessage) => set((state) => ({
         chats: state.chats.map((message) =>
             message.id === id ? { ...message,message:updatedMessage ,editStatus:true} : message

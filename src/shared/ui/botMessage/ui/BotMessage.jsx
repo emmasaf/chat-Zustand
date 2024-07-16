@@ -9,7 +9,7 @@ import {
 
 import {formatTime} from "../../../lib";
 import {Text} from "../../text";
-import {UserIcon} from "../../userIcon/index.js";
+import {UserIcon} from "../../userIcon";
 
 export const BotMessage = (props) => {
     const {date, message, isFirst = true} = props
