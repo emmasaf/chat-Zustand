@@ -50,7 +50,7 @@ The application will be available at `http://localhost:3000`.
 
 ## Project Structure
 
-.
+```css
 ├── public
 │   └── images
 ├── src
@@ -61,7 +61,7 @@ The application will be available at `http://localhost:3000`.
 │   ├── App.css
 │   ├── main.jsx
 │   └── App.jsx
-
+```
 
 ## Usage
 
