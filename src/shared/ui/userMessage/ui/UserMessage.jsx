@@ -25,7 +25,7 @@ export const UserMessage = (props) => {
             <div style={messageBoxStyles}>
                 <div style={titleStyles}>
                     {type === MESSAGE_TYPE_TEXT && <Text text={message} {...messageTextStyles}/>}
-                    {type === MESSAGE_TYPE_IMAGE && <img alt='uploaded-img' src={message} width='100'/>}
+                    {type === MESSAGE_TYPE_IMAGE && <img alt='uploaded-img' src={message} height='50'/>}
                 </div>
                 <div style={detailStyles}>
                     {editStatus && (
