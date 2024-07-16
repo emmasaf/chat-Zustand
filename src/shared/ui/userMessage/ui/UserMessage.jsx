@@ -19,7 +19,7 @@ export const UserMessage = (props) => {
     return (
         <div style={containerStyles}>
             <div style={editDeleteStyles}>
-                {type === MESSAGE_TYPE_TEXT && <EditButton message={message} id={id}/>}
+                <EditButton type={type} message={message} id={id}/>
                 <DeleteButton id={id}/>
             </div>
             <div style={messageBoxStyles}>

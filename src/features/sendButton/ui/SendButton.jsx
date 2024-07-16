@@ -3,7 +3,7 @@ import {useChatStore} from "../../../shared/zustand";
 import {Message} from "../../../shared/models";
 
 export const SendButton = (props) => {
-    const {active = false, isDisabled = true, messageText, onClick} = props
+    const {active = false, isDisabled = true, messageText} = props
     const {addMessage, editProps, updateMessage, setEditProps} = useChatStore();
 
     const status = active ? 'active' : 'disabled'
@@ -23,7 +23,6 @@ export const SendButton = (props) => {
             }, 2000);
 
         }
-        onClick()
     };
     return (
         <button disabled={isDisabled} style={buttonStyles} onClick={handleClick}>
