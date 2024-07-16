@@ -1,5 +1,8 @@
 export const headerStyle = {
     overflow: 'hidden',
+    top:0,
+    position:"fixed",
+    zIndex:3,
     width: '100%',
     backgroundColor: '#FFFFFF',
     display: 'flex',

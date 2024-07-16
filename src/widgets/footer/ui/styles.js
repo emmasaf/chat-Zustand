@@ -1,6 +1,7 @@
 export const footerStyle = {
     overflow: 'hidden',
     width: '100%',
+    zIndex:3,
     backgroundColor: '#FFFFFF',
     display: 'flex',
     flexDirection: 'row',

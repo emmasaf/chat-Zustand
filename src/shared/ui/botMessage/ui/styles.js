@@ -35,7 +35,7 @@ export const titleStyles = {
    paddingBottom:"15px"
 }
 export const detailStyles = {
-    minWidth: '70px',
+    minWidth: '75px',
     display: 'flex',
     alignItems: 'flex-end',
     justifyContent: 'flex-end',

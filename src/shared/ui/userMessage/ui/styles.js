@@ -30,14 +30,20 @@ export const editDeleteStyles = {
     justifyContent: 'flex-end',
 }
 export const detailStyles = {
-    minWidth: '70px',
+    minWidth: '75px',
     display: 'flex',
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
     gap: '4px',
+    position: 'relative',
 }
 export const bubbleTipStyles = {
     position: 'absolute',
     top: 0,
     right: '-9px',
+}
+export const editStatusStyles = {
+    position: 'absolute',
+    top: 0,
+    right: 0,
 }

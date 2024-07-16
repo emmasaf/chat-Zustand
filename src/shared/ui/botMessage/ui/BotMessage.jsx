@@ -13,7 +13,7 @@ import {UserIcon} from "../../userIcon/index.js";
 
 export const BotMessage = (props) => {
     const {date, message, isFirst = true} = props
-    const time = formatTime(date)
+    const time = formatTime(new Date(date))
 
     return (
         <div style={containerStyles}>

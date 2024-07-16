@@ -6,7 +6,8 @@ export const chatStyles = {
     padding:'17px',
     gap:'6px',
     width:'100%',
-    marginBottom:"50px"
+    marginBottom:"72px",
+    marginTop:"62px",
 }
 
 export const dateStyles = {
