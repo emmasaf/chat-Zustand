@@ -20,7 +20,7 @@ export const SendButton = (props) => {
             setTimeout(() => {
                 const botMessage = new Message(false, 'Hello World', 'bot')
                 addMessage(botMessage);
-            }, 2000);
+            }, 1000);
 
         }
     };

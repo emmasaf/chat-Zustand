@@ -10,5 +10,17 @@
 }
 
 .container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.container_edit {
+    padding: 10px;
+    background-color: rgba(237, 237, 237, 0.7);
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
     animation: fadeIn 0.5s ease-in-out;
 }

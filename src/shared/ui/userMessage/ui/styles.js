@@ -17,12 +17,6 @@ export const titleStyles = {
     paddingBottom:"15px"
 }
 
-export const containerStyles = {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'flex-end',
-}
-
 export const editDeleteStyles = {
     display: 'flex',
     alignItems: 'center',

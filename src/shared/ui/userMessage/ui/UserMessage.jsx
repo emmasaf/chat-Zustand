@@ -1,7 +1,6 @@
 import './animation.css';
 import {
     messageBoxStyles,
-    containerStyles,
     detailStyles,
     messageTextStyles,
     bubbleTipStyles,
@@ -12,13 +11,15 @@ import {formatTime} from "../../../lib";
 import {Text} from "../../text";
 import {EditButton, DeleteButton} from "../../../../features";
 import {MESSAGE_TYPE_IMAGE, MESSAGE_TYPE_TEXT} from "../../../consts";
+import {useChatStore} from "../../../zustand/index.js";
 
 export const UserMessage = (props) => {
+    const {editProps} = useChatStore()
     const {date, message, isFirst = true, id, editStatus, type} = props
     const time = formatTime(new Date(date))
 
     return (
-        <div style={containerStyles} className='container'>
+        <div  className={editProps?.id === id ? 'container_edit' :'container'}>
             <div style={editDeleteStyles}>
                 <EditButton type={type} message={message} id={id}/>
                 <DeleteButton id={id}/>
