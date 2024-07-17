@@ -13,21 +13,22 @@ export const UploadButton = () => {
         fileInputRef.current.click();
     };
 
-
     const handleFileChange = (event) => {
         const file = event.target.files[0];
-        const url = URL.createObjectURL(file)
-        const message = new Message(false, url, 'user', MESSAGE_TYPE_IMAGE)
-
-        if (editProps?.id) {
-            updateMessage(editProps.id, url)
-            setEditProps(null)
-        } else {
-            addMessage(message);
-            setTimeout(() => {
-                const botMessage = new Message(false, 'Hello World', 'bot')
-                addMessage(botMessage);
-            }, 2000);
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            const message = new Message(false, reader.result, 'user', MESSAGE_TYPE_IMAGE)
+            if (editProps?.id) {
+                updateMessage(editProps.id, reader.result)
+                setEditProps(null)
+            } else {
+                addMessage(message)
+                setTimeout(() => {
+                    const botMessage = new Message(false, 'Hello World', 'bot')
+                    addMessage(botMessage);
+                }, 2000);
+            }
         }
     };
 

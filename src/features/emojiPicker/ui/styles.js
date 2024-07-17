@@ -1,4 +1,5 @@
 export const emojiPickerStyles = {
+    all:'unset',
     display: 'flex',
     flexWrap: 'wrap',
     background: 'white',
