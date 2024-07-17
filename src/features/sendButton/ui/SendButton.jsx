@@ -25,7 +25,7 @@ export const SendButton = (props) => {
         }
     };
     return (
-        <button disabled={isDisabled} style={buttonStyles} onClick={handleClick}>
+        <button disabled={isDisabled} type='submit' style={buttonStyles} onClick={handleClick}>
             <img src={`/images/send-icon-${status}.png`} alt='send-icon'/>
         </button>
     )

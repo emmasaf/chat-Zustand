@@ -1,0 +1,11 @@
+.emojiPicker{
+    animation: slideIn 0.2s ease-in-out;
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

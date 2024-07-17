@@ -22,6 +22,7 @@ export const containerStyles = {
     display: 'flex',
     justifyContent: 'flex-end',
 }
+
 export const editDeleteStyles = {
     display: 'flex',
     alignItems: 'center',

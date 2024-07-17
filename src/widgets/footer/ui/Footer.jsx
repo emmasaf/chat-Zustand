@@ -1,16 +1,18 @@
 import {useEffect, useState} from 'react';
 import {Layout} from 'antd';
 import {SmileOutlined} from '@ant-design/icons';
-import {SendButton, UploadButton} from '../../../features';
-import {emojiIconStyles, inputStyles, footerStyle} from './styles.js';
+import {EmojiPicker, SendButton, UploadButton} from '../../../features';
+import {emojiIconStyles, inputStyles, footerStyle, formStyles} from './styles.js';
 import {useChatStore} from "../../../shared/zustand";
-import {MESSAGE_TYPE_TEXT} from "../../../shared/consts/index.js";
+import {MESSAGE_TYPE_TEXT} from "../../../shared/consts";
 
 const {Footer: AntFooter} = Layout;
 
 export const Footer = () => {
     const [isInputFocused, setIsInputFocused] = useState(false);
     const [value, setValue] = useState('');
+    const [isEmojiPickerVisible, setIsEmojiPickerVisible] = useState(false);
+
     const {editProps,chats}  = useChatStore()
 
     const isActive = isInputFocused && value.trim()
@@ -21,6 +23,14 @@ export const Footer = () => {
     }
     const handleClear = ()=>{
         setValue('')
+    }
+
+    const handleEmojiSelect = (emoji) => {
+        setValue(value + emoji);
+    };
+
+    const handleSubmit = (e)=>{
+        e.preventDefault();
     }
 
     useEffect(()=>{
@@ -36,21 +46,32 @@ export const Footer = () => {
 
     return (
         <AntFooter style={footerStyle}>
-            <SmileOutlined style={emojiIconStyles}/>
-            <input
-                value={value}
-                onChange={handleChangeValue}
-                style={inputStyles}
-                type="text"
-                placeholder="Start typing..."
-                onFocus={() => setIsInputFocused(true)}
-                onBlur={() => setIsInputFocused(false)}
-            />
-            <UploadButton/>
-            <SendButton active={isActive}
-                        isDisabled={isDisabled}
-                        messageText={value}
-            />
+            <form onSubmit={handleSubmit} style={formStyles}>
+                <div  onClick={() => setIsEmojiPickerVisible(!isEmojiPickerVisible)}>
+                    <SmileOutlined style={emojiIconStyles}/>
+                </div>
+                {isEmojiPickerVisible && (
+                    <EmojiPicker onSelect={handleEmojiSelect} />
+                )}
+                <input
+                    value={value}
+                    onChange={handleChangeValue}
+                    style={inputStyles}
+                    type="text"
+                    placeholder="Start typing..."
+                    onFocus={() => {
+                        setIsInputFocused(true)
+                        setIsEmojiPickerVisible(false)
+                    }}
+                    onBlur={() => setIsInputFocused(false)}
+                />
+                <UploadButton/>
+                <SendButton active={isActive}
+                            isDisabled={isDisabled}
+                            messageText={value}
+                />
+            </form>
+
         </AntFooter>
     );
 };

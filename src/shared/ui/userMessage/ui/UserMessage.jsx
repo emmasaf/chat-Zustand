@@ -1,3 +1,4 @@
+import './animation.css';
 import {
     messageBoxStyles,
     containerStyles,
@@ -17,7 +18,7 @@ export const UserMessage = (props) => {
     const time = formatTime(new Date(date))
 
     return (
-        <div style={containerStyles}>
+        <div style={containerStyles} className='container'>
             <div style={editDeleteStyles}>
                 <EditButton type={type} message={message} id={id}/>
                 <DeleteButton id={id}/>

@@ -1,3 +1,4 @@
+import  './animation.css';
 import {
     messageBoxStyles,
     containerStyles,
@@ -16,7 +17,7 @@ export const BotMessage = (props) => {
     const time = formatTime(new Date(date))
 
     return (
-        <div style={containerStyles}>
+        <div style={containerStyles} className='container'>
             <UserIcon/>
             <div style={messageBoxStyles}>
                 <div style={textStyles}>
